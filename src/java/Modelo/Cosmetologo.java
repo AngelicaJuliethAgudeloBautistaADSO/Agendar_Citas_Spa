@@ -4,18 +4,20 @@ public class Cosmetologo {
     int id;
     String nom;
     String apell;
-    long telef;
+    String telef;
     String especi;
 
     public Cosmetologo() {
     }
 
-    public Cosmetologo(String nom, String apell, long telef, String especi) {
+    public Cosmetologo(String nom, String apell, String telef, String especi) {
         this.nom = nom;
         this.apell = apell;
         this.telef = telef;
         this.especi = especi;
     }
+
+    
 
     public int getId() {
         return id;
@@ -41,11 +43,11 @@ public class Cosmetologo {
         this.apell = apell;
     }
 
-    public long getTelef() {
+    public String getTelef() {
         return telef;
     }
 
-    public void setTelef(long telef) {
+    public void setTelef(String telef) {
         this.telef = telef;
     }
 

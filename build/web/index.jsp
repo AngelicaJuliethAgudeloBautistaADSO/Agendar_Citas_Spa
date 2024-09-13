@@ -7,7 +7,7 @@
     </head>
     <body>
         <div>
-            <a href="Admin/inicio.jsp">administrador</a>
+            <a href="admin/inicio.jsp">administrador</a>
             <a href="">usuario</a>
             <a href="">cosmetologo</a>
             <button class="button_nav_logo" >

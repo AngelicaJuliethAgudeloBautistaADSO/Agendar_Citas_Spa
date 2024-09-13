@@ -12,6 +12,23 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <div class="contenido">
+            <div class="logo_inicio">
+                <img class="img_logo" src="../imagenes/logo.png" alt="">
+            </div>
+            <form action="ControlCosmetol">
+                <p>Agrega un nuevo</p> 
+                <input type="text" name="txtNom" placeholder="Nombre">
+                <input type="text" name="txtApell" placeholder="Apellido">
+                <input type="text" name="txtTelef" placeholder="Telefono">
+                <input type="text" name="txtEspecialidad" placeholder="Especialidad">
+
+                <input type="submit" name="accion" value="Agregar">
+                
+                <%--<button type="submit" id="submit" name="accion" value="Agregar">
+                    <a href="">Agregar</a>
+                </button> --%>
+            </form>
+        </div>
     </body>
 </html>

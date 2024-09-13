@@ -8,6 +8,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JOptionPane;
 
 public class CosmetologoDAO implements CRUD_cosmetologo{
 
@@ -33,7 +34,7 @@ public class CosmetologoDAO implements CRUD_cosmetologo{
             cosm.setId(rs.getInt("id"));
             cosm.setNom(rs.getString("nombre"));
             cosm.setApell(rs.getString("apellido"));
-            cosm.setTelef(rs.getLong("telefono"));
+            cosm.setTelef(rs.getString("telefono"));
             cosm.setEspeci(rs.getString("especialidad"));
             list.add(cosm);
             }
@@ -49,7 +50,15 @@ public class CosmetologoDAO implements CRUD_cosmetologo{
 
     @Override
     public boolean add(Cosmetologo cos) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        String sql="insert into tb_cosmetolo (nombre, apellido, telefono, especialidad)values('"+cos.getNom()+"','"+cos.getApell()+"','"+cos.getTelef()+"','"+cos.getEspeci()+"');";
+        try {
+            con=cn.geConnection();
+            ps=con.prepareStatement(sql);
+            ps.executeUpdate();
+        } catch (Exception e) {
+            System.out.println(e.toString());
+        }
+        return false;
     }
 
     @Override

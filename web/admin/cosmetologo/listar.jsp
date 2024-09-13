@@ -8,6 +8,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <link rel="stylesheet" href="listar.css"/>
     </head>
     <body>
         <div class="contenedor">
@@ -44,9 +45,10 @@
                 <div class="panel">
                     <div class="contenido_principal">
                         <h2 class="h2_principal">Cosmetologo</h2>
-                        <button class="boton_panel">
-                            <a href="">+ Agregar nuevo</a>
-                        </button>
+                        <button class="boton_panel"></button>
+                        
+                        <a href="ControlCosmetol?accion=add">+ Agregar nuevo</a>
+                        
                         <table class="tabla_principal" border="1">
                             <thead class="thead_tabla">
                                 <tr class="tr_tabla">
