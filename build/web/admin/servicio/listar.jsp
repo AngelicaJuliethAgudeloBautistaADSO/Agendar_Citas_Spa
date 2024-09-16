@@ -1,14 +1,15 @@
-<%@page import="java.util.Iterator"%>
-<%@page import="java.util.List"%>
-<%@page import="Modelo.Cosmetologo"%>
-<%@page import="ModeloDAO.CosmetologoDAO"%>
+<%-- 
+    Document   : listar
+    Created on : 14/09/2024, 3:52:25 p. m.
+    Author     : angel
+--%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        <link rel="stylesheet" href="css/cssAdmin/cssCosmetologo/listar.css"/>
     </head>
     <body>
         <div class="contenedor">
@@ -44,46 +45,22 @@
             <main class="cont_logo">
                 <div class="panel">
                     <div class="contenido_principal">
-                        <h2 class="h2_principal">Cosmetologo</h2>
-                        
-                        <a class="boton_panel" href="ControlCosmetol?accion=add">+ Agregar nuevo</a>
-                        
-                        <table class="tabla_principal" border="1">
+                        <h2 class="h2_principal">Agregar servicio</h2>
+                        <button class="boton_panel">
+                            <a href="agregarCosmetol_admin.html">+ Agregar nuevo</a>
+                        </button>
+                        <table class="tabla_principal">
                             <thead class="thead_tabla">
                                 <tr class="tr_tabla">
-                                    <th class="th_tabla">Id</th>
+                                    <th class="th_tabla">Codigo</th>
                                     <th class="th_tabla">Nombre</th>
-                                    <th class="th_tabla">Apellido</th>
-                                    <th class="th_tabla">Telefono</th>
-                                    <th class="th_tabla">Especialidad</th>
+                                    <th class="th_tabla">Descripcion</th>
+                                    <th class="th_tabla">Valor</th>
                                     <th class="th_tabla">Acciones</th>
                                 </tr>
                             </thead>
-                            <%
-                                CosmetologoDAO dao=new CosmetologoDAO();
-                                List<Cosmetologo>list=dao.listar();
-                                Iterator<Cosmetologo>iter=list.iterator();
-                                Cosmetologo cosm=null;
-
-                                while (iter.hasNext()) {
-                                        cosm=iter.next();
-
-                            %>
                             <tbody>
-                                <tr>
-                                    <td class="th_tabla"><%= cosm.getId()%></td>
-                                    <td class="th_tabla"><%= cosm.getNom()%></td>
-                                    <td class="th_tabla"><%= cosm.getApell()%></td>
-                                    <td class="th_tabla"><%= cosm.getTelef()%></td>
-                                    <td class="th_tabla"><%= cosm.getEspeci()%></td>
-                                    <td class="th_tabla">
-                                        <a class="boton_acciones" href="ControlCosmetol?accion=editar&id=<%= cosm.getId()%>">Editar</a> 
-                                        <a class="boton_acciones" href="ControlCosmetol?accion=eliminar&id=<%= cosm.getId()%>">Remover</a> 
-                                    </td>
-                                </tr>
-                                <%
-                                    }
-                                %>
+
                             </tbody>
                         </table>
                     </div>

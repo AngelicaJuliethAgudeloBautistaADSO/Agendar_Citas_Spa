@@ -8,7 +8,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        <link rel="stylesheet" href="listar.css"/>
+        <link rel="stylesheet" href="css/cssAdmin/cssCosmetologo/listar.css"/>
     </head>
     <body>
         <div class="contenedor">
@@ -45,9 +45,8 @@
                 <div class="panel">
                     <div class="contenido_principal">
                         <h2 class="h2_principal">Cosmetologo</h2>
-                        <button class="boton_panel"></button>
                         
-                        <a href="ControlCosmetol?accion=add">+ Agregar nuevo</a>
+                        <a class="boton_panel" href="ControlCosmetol?accion=add">+ Agregar nuevo</a>
                         
                         <table class="tabla_principal" border="1">
                             <thead class="thead_tabla">
@@ -72,14 +71,14 @@
                             %>
                             <tbody>
                                 <tr>
-                                    <td><%= cosm.getId()%></td>
-                                    <td><%= cosm.getNom()%></td>
-                                    <td><%= cosm.getApell()%></td>
-                                    <td><%= cosm.getTelef()%></td>
-                                    <td><%= cosm.getEspeci()%></td>
-                                    <td>
-                                        <a>Editar</a> 
-                                        <a>Remover</a> 
+                                    <td class="th_tabla"><%= cosm.getId()%></td>
+                                    <td class="th_tabla"><%= cosm.getNom()%></td>
+                                    <td class="th_tabla"><%= cosm.getApell()%></td>
+                                    <td class="th_tabla"><%= cosm.getTelef()%></td>
+                                    <td class="th_tabla"><%= cosm.getEspeci()%></td>
+                                    <td class="th_tabla">
+                                        <a class="boton_acciones" href="ControlCosmetol?accion=editar&id=<%= cosm.getId()%>">Editar</a> 
+                                        <a class="boton_acciones" href="ControlCosmetol?accion=eliminar&id=<%= cosm.getId()%>">Remover</a> 
                                     </td>
                                 </tr>
                                 <%

@@ -17,6 +17,7 @@ public class ControlCosmetol extends HttpServlet {
     
     Cosmetologo cosmet=new Cosmetologo();
     CosmetologoDAO dao=new CosmetologoDAO();
+    private int id;
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -42,7 +43,7 @@ public class ControlCosmetol extends HttpServlet {
         if (action.equalsIgnoreCase("listar")) {
             acceso=listar;
         }
-        //add
+        //agregar
         else if(action.equalsIgnoreCase("add")){
             acceso=add;
         }
@@ -60,6 +61,37 @@ public class ControlCosmetol extends HttpServlet {
             cosmet.setTelef(telef);
             cosmet.setEspeci(especi);
             dao.add(cosmet);
+            acceso=listar;
+        }
+        //editar
+        else if (action.equalsIgnoreCase("editar")) {
+            request.setAttribute("idcosm", request.getParameter(("id")));
+            acceso=edit;
+        }
+        else if (action.equalsIgnoreCase("Actualizar")) {
+            id=Integer.parseInt(request.getParameter("txtid"));
+            String nom=request.getParameter("txtNom");
+            String apell=request.getParameter("txtApell");
+            String telef=request.getParameter("txtTelef");
+            String especi=request.getParameter("txtEspecialidad");
+            System.out.print(id);
+            System.out.print(nom);
+            System.out.print(apell);
+            System.out.print(telef);
+            System.out.print(especi);
+            cosmet.setId(id);
+            cosmet.setNom(nom);
+            cosmet.setApell(apell);
+            cosmet.setTelef(telef);
+            cosmet.setEspeci(especi);
+            dao.edit(cosmet);
+            acceso=listar;
+        }
+        //eliminar
+        else if (action.equalsIgnoreCase("eliminar")) {
+            id=Integer.parseInt(request.getParameter("id"));
+            cosmet.setId(id);
+            dao.eliminar(id);
             acceso=listar;
         }
         RequestDispatcher vista=request.getRequestDispatcher(acceso);

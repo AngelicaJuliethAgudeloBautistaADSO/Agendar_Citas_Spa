@@ -45,7 +45,21 @@ public class CosmetologoDAO implements CRUD_cosmetologo{
 
     @Override
     public Cosmetologo list(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        String sql="SELECT * FROM `tb_cosmetolo` WHERE id =" + id;
+        try {
+            con=cn.geConnection();
+            ps=con.prepareStatement(sql);
+            rs=ps.executeQuery();
+            while (rs.next()) {            
+            cosmet.setId(rs.getInt("id"));
+            cosmet.setNom(rs.getString("nombre"));
+            cosmet.setApell(rs.getString("apellido"));
+            cosmet.setTelef(rs.getString("telefono"));
+            cosmet.setEspeci(rs.getString("especialidad"));
+            }
+        } catch (Exception e) {
+        }
+        return cosmet;
     }
 
     @Override
@@ -63,12 +77,26 @@ public class CosmetologoDAO implements CRUD_cosmetologo{
 
     @Override
     public boolean edit(Cosmetologo cos) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        String sql="update tb_cosmetolo set nombre='"+cos.getNom()+"',apellido='"+cos.getApell()+"',telefono='"+cos.getTelef()+"',especialidad='"+cos.getEspeci()+"'where id="+cos.getId();
+        try {
+            con=cn.geConnection();
+            ps=con.prepareStatement(sql);
+            ps.executeUpdate();
+        } catch (Exception e) {
+        }
+        return false;
     }
 
     @Override
     public boolean eliminar(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        String sql="DELETE FROM tb_cosmetolo WHERE id="+id;
+        try {
+            con=cn.geConnection();
+            ps=con.prepareStatement(sql);
+            ps.executeUpdate();
+        } catch (Exception e) {
+        }
+        return false;
     }
     
 }

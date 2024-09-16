@@ -7,7 +7,7 @@ public class Conexion {
     public  Conexion(){
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            con=DriverManager.getConnection("jdbc:mysql://localhost:3306/base_datos_spa","root","#Aprendiz2024");
+            con=DriverManager.getConnection("jdbc:mysql://localhost:3306/base_datos_spa","root","");
         } catch (Exception e) {
             System.err.println("Error"+e);
         }

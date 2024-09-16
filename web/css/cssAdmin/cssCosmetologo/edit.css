@@ -72,7 +72,7 @@ form .show-password input {
     width: auto;
     margin-left: 10px;
 }
-button{
+.button{
     width: 30%;
     padding: 10px;
     background-color: #ffffff;
@@ -90,3 +90,5 @@ p , a{
     font-size: var(--font-size);
     text-decoration: none;
 }
+
+

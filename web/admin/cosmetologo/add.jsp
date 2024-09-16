@@ -10,6 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <link rel="stylesheet" href="css/cssAdmin/cssCosmetologo/add.css"/>
     </head>
     <body>
         <div class="contenido">
@@ -23,7 +24,7 @@
                 <input type="text" name="txtTelef" placeholder="Telefono">
                 <input type="text" name="txtEspecialidad" placeholder="Especialidad">
 
-                <input type="submit" name="accion" value="Agregar">
+                <input class="button" type="submit" name="accion" value="Agregar">
                 
                 <%--<button type="submit" id="submit" name="accion" value="Agregar">
                     <a href="">Agregar</a>
